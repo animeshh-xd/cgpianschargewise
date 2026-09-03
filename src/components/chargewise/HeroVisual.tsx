@@ -79,9 +79,10 @@ export function HeroVisual() {
               <Zap className="h-5 w-5" />
             </span>
           </div>
+        </div>
 
-          {/* recommendation card */}
-          <div className="animate-cw-float relative z-10 mx-4 mb-4 mt-[-1rem] rounded-2xl border border-border bg-background/90 p-4 shadow-soft backdrop-blur-xl sm:absolute sm:bottom-4 sm:left-auto sm:right-5 sm:m-0 sm:w-[54%]">
+        {/* recommendation card */}
+        <div className="animate-cw-float relative z-10 mx-4 -mt-10 mb-4 rounded-2xl border border-border bg-background/90 p-4 shadow-soft backdrop-blur-xl sm:absolute sm:bottom-4 sm:right-5 sm:m-0 sm:w-[54%]">
             <div className="flex items-center gap-2">
               <span className="inline-flex items-center gap-1.5 rounded-full bg-primary/12 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.14em] text-primary">
                 <Zap className="h-3 w-3" /> ChargeWise Pick
