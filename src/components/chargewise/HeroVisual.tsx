@@ -22,7 +22,7 @@ export function HeroVisual() {
           }}
         />
 
-        <div className="relative w-full pt-[68%] sm:pt-0 sm:aspect-16/12">
+        <div className="relative aspect-4/3 w-full sm:aspect-16/12">
           {/* route line */}
           <svg
             className="absolute inset-0 h-full w-full"
