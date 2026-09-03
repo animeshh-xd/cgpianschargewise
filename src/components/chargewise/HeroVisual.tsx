@@ -133,7 +133,7 @@ export function HeroVisual() {
             </div>
           </div>
         </div>
-      </div>
+
       <p className="mt-3 text-center text-xs text-muted-foreground">
         Illustrative mockup — sample data shown.
       </p>
