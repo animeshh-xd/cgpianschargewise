@@ -31,14 +31,14 @@ export function HeroVisual() {
             aria-hidden="true"
           >
             <path
-              d="M64 218 C 104 198, 118 132, 156 96 S 172 68, 184 60"
+              d="M64 218 C 98 200, 106 140, 128 106 S 138 82, 140 72"
               stroke="var(--energy)"
               strokeOpacity="0.22"
               strokeWidth="8"
               strokeLinecap="round"
             />
             <path
-              d="M64 218 C 104 198, 118 132, 156 96 S 172 68, 184 60"
+              d="M64 218 C 98 200, 106 140, 128 106 S 138 82, 140 72"
               stroke="var(--energy)"
               strokeWidth="2.4"
               strokeLinecap="round"
@@ -73,7 +73,7 @@ export function HeroVisual() {
           </div>
 
           {/* recommended station */}
-          <div className="absolute left-[46%] top-[20%] -translate-x-1/2 -translate-y-1/2">
+          <div className="absolute left-[35%] top-[24%] -translate-x-1/2 -translate-y-1/2">
             <span className="absolute inset-0 rounded-full bg-primary/50 animate-cw-pulse" />
             <span className="relative flex h-11 w-11 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-glow">
               <Zap className="h-5 w-5" />
