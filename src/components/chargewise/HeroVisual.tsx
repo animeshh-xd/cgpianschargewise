@@ -1,10 +1,10 @@
 import { BadgeCheck, Clock, IndianRupee, MapPin, Navigation, Zap } from "lucide-react";
 
 const stations = [
-  { top: "22%", left: "18%" },
-  { top: "63%", left: "26%" },
-  { top: "34%", left: "72%" },
-  { top: "78%", left: "68%" },
+  { top: "24%", left: "16%" },
+  { top: "58%", left: "27%" },
+  { top: "13%", left: "42%" },
+  { top: "14%", left: "80%" },
 ];
 
 export function HeroVisual() {
@@ -31,14 +31,14 @@ export function HeroVisual() {
             aria-hidden="true"
           >
             <path
-              d="M70 235 C 130 205, 150 150, 215 140 S 300 120, 318 96"
+              d="M64 218 C 110 196, 128 138, 178 108 S 220 78, 240 66"
               stroke="var(--energy)"
               strokeOpacity="0.22"
               strokeWidth="8"
               strokeLinecap="round"
             />
             <path
-              d="M70 235 C 130 205, 150 150, 215 140 S 300 120, 318 96"
+              d="M64 218 C 110 196, 128 138, 178 108 S 220 78, 240 66"
               stroke="var(--energy)"
               strokeWidth="2.4"
               strokeLinecap="round"
@@ -62,7 +62,7 @@ export function HeroVisual() {
           ))}
 
           {/* EV indicator */}
-          <div className="absolute left-[17.5%] top-[78%] -translate-x-1/2 -translate-y-1/2">
+          <div className="absolute left-[16%] top-[73%] -translate-x-1/2 -translate-y-1/2">
             <span className="absolute inset-0 rounded-full bg-signal/40 animate-cw-pulse" />
             <span className="relative flex h-8 w-8 items-center justify-center rounded-full border border-signal/50 bg-background text-signal">
               <Navigation className="h-4 w-4" />
@@ -73,7 +73,7 @@ export function HeroVisual() {
           </div>
 
           {/* recommended station */}
-          <div className="absolute left-[79.5%] top-[32%] -translate-x-1/2 -translate-y-1/2">
+          <div className="absolute left-[60%] top-[22%] -translate-x-1/2 -translate-y-1/2">
             <span className="absolute inset-0 rounded-full bg-primary/50 animate-cw-pulse" />
             <span className="relative flex h-11 w-11 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-glow">
               <Zap className="h-5 w-5" />
@@ -81,7 +81,7 @@ export function HeroVisual() {
           </div>
 
           {/* recommendation card */}
-          <div className="animate-cw-float absolute bottom-4 left-4 right-4 rounded-2xl border border-border bg-background/90 p-4 shadow-soft backdrop-blur-xl sm:left-auto sm:right-5 sm:w-[62%]">
+          <div className="animate-cw-float absolute bottom-4 left-4 right-4 rounded-2xl border border-border bg-background/90 p-4 shadow-soft backdrop-blur-xl sm:left-auto sm:right-5 sm:w-[54%]">
             <div className="flex items-center gap-2">
               <span className="inline-flex items-center gap-1.5 rounded-full bg-primary/12 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.14em] text-primary">
                 <Zap className="h-3 w-3" /> ChargeWise Pick
