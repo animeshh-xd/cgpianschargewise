@@ -4,7 +4,7 @@ const stations = [
   { top: "24%", left: "16%" },
   { top: "58%", left: "27%" },
   { top: "13%", left: "42%" },
-  { top: "14%", left: "80%" },
+  { top: "8%", left: "84%" },
 ];
 
 export function HeroVisual() {
@@ -31,14 +31,14 @@ export function HeroVisual() {
             aria-hidden="true"
           >
             <path
-              d="M64 218 C 110 196, 128 138, 178 108 S 220 78, 240 66"
+              d="M64 218 C 104 198, 118 132, 156 96 S 172 68, 184 60"
               stroke="var(--energy)"
               strokeOpacity="0.22"
               strokeWidth="8"
               strokeLinecap="round"
             />
             <path
-              d="M64 218 C 110 196, 128 138, 178 108 S 220 78, 240 66"
+              d="M64 218 C 104 198, 118 132, 156 96 S 172 68, 184 60"
               stroke="var(--energy)"
               strokeWidth="2.4"
               strokeLinecap="round"
@@ -73,7 +73,7 @@ export function HeroVisual() {
           </div>
 
           {/* recommended station */}
-          <div className="absolute left-[60%] top-[22%] -translate-x-1/2 -translate-y-1/2">
+          <div className="absolute left-[46%] top-[20%] -translate-x-1/2 -translate-y-1/2">
             <span className="absolute inset-0 rounded-full bg-primary/50 animate-cw-pulse" />
             <span className="relative flex h-11 w-11 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-glow">
               <Zap className="h-5 w-5" />
