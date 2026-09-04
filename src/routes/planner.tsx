@@ -34,9 +34,9 @@ const vehicles = [
   "MG ZS EV",
   "Hyundai IONIQ 5",
   "Mahindra XUV400 EV",
-];
+] as const;
 
-const connectors = ["CCS2", "Type 2", "CHAdeMO"];
+const connectors = ["CCS2", "Type 2", "CHAdeMO"] as const;
 const chargingTargets = [50, 60, 70, 80, 90, 100];
 
 export const Route = createFileRoute("/planner")({
@@ -66,8 +66,8 @@ function ChargingPlanner() {
 
   const [currentLocation, setCurrentLocation] = useState("");
   const [battery, setBattery] = useState(23);
-  const [vehicle, setVehicle] = useState(vehicles[0]);
-  const [connector, setConnector] = useState(connectors[0]);
+  const [vehicle, setVehicle] = useState<string>(vehicles[0]);
+  const [connector, setConnector] = useState<string>(connectors[0]);
   const [destination, setDestination] = useState("");
   const [target, setTarget] = useState(80);
   const [isLoading, setIsLoading] = useState(false);
@@ -249,7 +249,7 @@ function ChargingPlanner() {
                       <Slider
                         id="battery"
                         value={[battery]}
-                        onValueChange={(value) => setBattery(value[0])}
+                        onValueChange={(value) => setBattery(value[0] ?? battery)}
                         min={5}
                         max={100}
                         step={1}
