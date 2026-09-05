@@ -28,6 +28,8 @@ import {
 import { Slider } from "@/components/ui/slider";
 import { Logo } from "@/components/chargewise/Logo";
 import { Reveal } from "@/components/chargewise/Reveal";
+import { defaultSession, writeSession } from "@/lib/chargewise-session";
+import { recommendedStation } from "@/lib/chargewise-data";
 
 const vehicles = [
   "Tata Nexon EV",
@@ -78,6 +80,17 @@ function ChargingPlanner() {
 
   const handleFindCharger = () => {
     setIsLoading(true);
+    writeSession({
+      currentLocation: currentLocation.trim() || defaultSession.currentLocation,
+      destination: destination.trim() || defaultSession.destination,
+      battery,
+      vehicle,
+      connector,
+      target,
+      selectedStationId: recommendedStation.id,
+      reservationConfirmed: false,
+      chargingComplete: false,
+    });
     setTimeout(() => {
       navigate({ to: "/stations" });
     }, 600);
