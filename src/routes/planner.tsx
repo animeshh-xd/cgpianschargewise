@@ -80,6 +80,17 @@ function ChargingPlanner() {
 
   const handleFindCharger = () => {
     setIsLoading(true);
+    writeSession({
+      currentLocation: currentLocation.trim() || defaultSession.currentLocation,
+      destination: destination.trim() || defaultSession.destination,
+      battery,
+      vehicle,
+      connector,
+      target,
+      selectedStationId: recommendedStation.id,
+      reservationConfirmed: false,
+      chargingComplete: false,
+    });
     setTimeout(() => {
       navigate({ to: "/stations" });
     }, 600);
