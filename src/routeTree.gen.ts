@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as PlannerRouteImport } from './routes/planner'
+import { Route as RecommendationRouteImport } from './routes/recommendation'
 import { Route as StationsRouteImport } from './routes/stations'
 
 const IndexRoute = IndexRouteImport.update({
@@ -23,6 +24,11 @@ const PlannerRoute = PlannerRouteImport.update({
   path: '/planner',
   getParentRoute: () => rootRouteImport,
 } as any)
+const RecommendationRoute = RecommendationRouteImport.update({
+  id: '/recommendation',
+  path: '/recommendation',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const StationsRoute = StationsRouteImport.update({
   id: '/stations',
   path: '/stations',
@@ -32,30 +38,34 @@ const StationsRoute = StationsRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/planner': typeof PlannerRoute
+  '/recommendation': typeof RecommendationRoute
   '/stations': typeof StationsRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/planner': typeof PlannerRoute
+  '/recommendation': typeof RecommendationRoute
   '/stations': typeof StationsRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/planner': typeof PlannerRoute
+  '/recommendation': typeof RecommendationRoute
   '/stations': typeof StationsRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/planner' | '/stations'
+  fullPaths: '/' | '/planner' | '/recommendation' | '/stations'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/planner' | '/stations'
-  id: '__root__' | '/' | '/planner' | '/stations'
+  to: '/' | '/planner' | '/recommendation' | '/stations'
+  id: '__root__' | '/' | '/planner' | '/recommendation' | '/stations'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   PlannerRoute: typeof PlannerRoute
+  RecommendationRoute: typeof RecommendationRoute
   StationsRoute: typeof StationsRoute
 }
 
@@ -75,6 +85,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PlannerRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/recommendation': {
+      id: '/recommendation'
+      path: '/recommendation'
+      fullPath: '/recommendation'
+      preLoaderRoute: typeof RecommendationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/stations': {
       id: '/stations'
       path: '/stations'
@@ -88,6 +105,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   PlannerRoute: PlannerRoute,
+  RecommendationRoute: RecommendationRoute,
   StationsRoute: StationsRoute,
 }
 export const routeTree = rootRouteImport
