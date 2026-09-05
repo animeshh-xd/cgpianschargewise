@@ -28,6 +28,8 @@ import {
 import { Slider } from "@/components/ui/slider";
 import { Logo } from "@/components/chargewise/Logo";
 import { Reveal } from "@/components/chargewise/Reveal";
+import { defaultSession, writeSession } from "@/lib/chargewise-session";
+import { recommendedStation } from "@/lib/chargewise-data";
 
 const vehicles = [
   "Tata Nexon EV",
