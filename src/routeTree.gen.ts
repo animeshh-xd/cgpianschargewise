@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as PlannerRouteImport } from './routes/planner'
 import { Route as RecommendationRouteImport } from './routes/recommendation'
+import { Route as ReservationRouteImport } from './routes/reservation'
 import { Route as StationsRouteImport } from './routes/stations'
 
 const IndexRoute = IndexRouteImport.update({
@@ -29,6 +30,11 @@ const RecommendationRoute = RecommendationRouteImport.update({
   path: '/recommendation',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ReservationRoute = ReservationRouteImport.update({
+  id: '/reservation',
+  path: '/reservation',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const StationsRoute = StationsRouteImport.update({
   id: '/stations',
   path: '/stations',
@@ -39,12 +45,14 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/planner': typeof PlannerRoute
   '/recommendation': typeof RecommendationRoute
+  '/reservation': typeof ReservationRoute
   '/stations': typeof StationsRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/planner': typeof PlannerRoute
   '/recommendation': typeof RecommendationRoute
+  '/reservation': typeof ReservationRoute
   '/stations': typeof StationsRoute
 }
 export interface FileRoutesById {
@@ -52,20 +60,28 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/planner': typeof PlannerRoute
   '/recommendation': typeof RecommendationRoute
+  '/reservation': typeof ReservationRoute
   '/stations': typeof StationsRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/planner' | '/recommendation' | '/stations'
+  fullPaths: '/' | '/planner' | '/recommendation' | '/reservation' | '/stations'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/planner' | '/recommendation' | '/stations'
-  id: '__root__' | '/' | '/planner' | '/recommendation' | '/stations'
+  to: '/' | '/planner' | '/recommendation' | '/reservation' | '/stations'
+  id:
+    | '__root__'
+    | '/'
+    | '/planner'
+    | '/recommendation'
+    | '/reservation'
+    | '/stations'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   PlannerRoute: typeof PlannerRoute
   RecommendationRoute: typeof RecommendationRoute
+  ReservationRoute: typeof ReservationRoute
   StationsRoute: typeof StationsRoute
 }
 
@@ -92,6 +108,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof RecommendationRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/reservation': {
+      id: '/reservation'
+      path: '/reservation'
+      fullPath: '/reservation'
+      preLoaderRoute: typeof ReservationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/stations': {
       id: '/stations'
       path: '/stations'
@@ -106,6 +129,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   PlannerRoute: PlannerRoute,
   RecommendationRoute: RecommendationRoute,
+  ReservationRoute: ReservationRoute,
   StationsRoute: StationsRoute,
 }
 export const routeTree = rootRouteImport
